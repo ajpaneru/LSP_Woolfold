@@ -2,67 +2,74 @@ package org.howard.edu.lsp.assignment4;
 
 public class Driver {
     public static void main(String[] args) {
-        // Creating two IntegerSet instances for demonstration
-        IntegerSet firstSet = new IntegerSet();
-        IntegerSet secondSet = new IntegerSet();
+        // Initialize two sets
+        IntegerSet set1 = new IntegerSet();
+        IntegerSet set2 = new IntegerSet();
         
-        // Populating firstSet with some integers
-        firstSet.add(10);
-        firstSet.add(20);
-        firstSet.add(30);
-        System.out.println("Initial state of firstSet: " + firstSet);
+        // Adding elements to set1
+        set1.add(1);
+        set1.add(3);
+        set1.add(5);
+        System.out.println("Set1 initial elements: " + set1.toString());
         
-        // Populating secondSet with some integers
-        secondSet.add(20);
-        secondSet.add(30);
-        secondSet.add(40);
-        System.out.println("Initial state of secondSet: " + secondSet);
+        // Adding elements to set2
+        set2.add(2);
+        set2.add(3);
+        set2.add(6);
+        System.out.println("Set2 initial elements: " + set2.toString());
         
-        // Demonstrating union functionality
-        firstSet.union(secondSet);
-        System.out.println("firstSet after union with secondSet: " + firstSet);
+        // Performing union operation
+        set1.union(set2);
+        System.out.println("Set1 after union with Set2: " + set1.toString());
         
-        // Resetting firstSet to original values for next operation
-        firstSet.clear();
-        firstSet.add(10);
-        firstSet.add(20);
-        firstSet.add(30);
+        // Reset and reinitialize set1
+        set1.clear();
+        set1.add(1);
+        set1.add(3);
+        set1.add(5);
         
-        // Demonstrating intersection functionality
-        firstSet.intersect(secondSet);
-        System.out.println("firstSet after intersection with secondSet: " + firstSet);
+        // Performing intersection operation
+        set1.intersect(set2);
+        System.out.println("Set1 after intersect with Set2: " + set1.toString());
         
-        // Resetting firstSet for difference demonstration
-        firstSet.clear();
-        firstSet.add(10);
-        firstSet.add(20);
-        firstSet.add(30);
+        // Reset and reinitialize set1
+        set1.clear();
+        set1.add(1);
+        set1.add(3);
+        set1.add(5);
         
-        // Demonstrating difference functionality
-        firstSet.diff(secondSet);
-        System.out.println("firstSet after difference from secondSet: " + firstSet);
+        // Performing difference operation
+        set1.diff(set2);
+        System.out.println("Set1 after difference with Set2: " + set1.toString());
         
-        // Checking for specific elements
-        boolean contains = firstSet.contains(10);
-        System.out.println("Does firstSet contain 10? " + contains);
+        // Demonstrating other IntegerSet functionalities
+        set1.clear();
+        set1.add(4);
+        set1.add(7);
+        set1.add(8);
+        System.out.println("Reinitialized Set1: " + set1.toString());
         
-        // Testing for the largest and smallest elements
+        // Testing contains method
+        System.out.println("Set1 contains 4: " + set1.contains(4));
+        System.out.println("Set1 contains 2: " + set1.contains(2));
+        
+        // Testing largest and smallest methods
         try {
-            System.out.println("Largest element in secondSet: " + secondSet.largest());
-            System.out.println("Smallest element in secondSet: " + secondSet.smallest());
+            System.out.println("Largest element in Set1: " + set1.largest());
+            System.out.println("Smallest element in Set1: " + set1.smallest());
         } catch (IntegerSetException e) {
-            System.err.println("Exception caught: " + e.getMessage());
+            System.out.println(e.getMessage());
         }
         
-        // Verifying the isEmpty method
-        firstSet.clear();
-        System.out.println("Is firstSet empty? " + firstSet.isEmpty());
+        // Testing isEmpty method
+        set1.clear();
+        System.out.println("Set1 is empty after clear: " + set1.isEmpty());
         
-        // Attempting to find the largest element in an empty set
+        // Try to get the largest element of an empty set
         try {
-            firstSet.largest();
+            set1.largest();
         } catch (IntegerSetException e) {
-            System.err.println("Attempted to find largest in empty set: " + e.getMessage());
+            System.out.println("Error trying to get the largest element of an empty set: " + e.getMessage());
         }
     }
 }
