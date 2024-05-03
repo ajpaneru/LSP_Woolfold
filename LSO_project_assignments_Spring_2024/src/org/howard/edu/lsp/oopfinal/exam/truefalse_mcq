@@ -54,7 +54,7 @@ T  False Design patterns are reusable libraries that can immediately be used in 
 T  False Frameworks and design patterns are the same thing as far as designers are concerned
 True  F Because of potential problems, developers must be aware of the effects of modifications in a superclass and in each of the subclasses that will inherit the modifications.
 True  F Factory pattern can be combined with other patterns
-True  F Creational design patterns are all about Class and Object composition. 
+T  False Creational design patterns are all about Class and Object composition. 
 T  False Structural design patterns are all about class instantiation
 T  False Design patterns are a mechanism that enable developer to reuse code in their implementations.
 T  False Behavioral design patterns are all about Class's objects communication
@@ -187,9 +187,9 @@ To ensure a class has only one instance.
 
 What is the main advantage of the Strategy design pattern?
 It allows a class to have only one instance.
-It defines a family of algorithms, encapsulates each one, and makes them interchangeable.
+It defines a family of algorithms, encapsulates each one, and makes them interchangeable.-answer
 It allows the definition of a family of algorithms, encapsulates each one, and makes them interchangeable.
-It enables the selection of an algorithm’s implementation at runtime.-answer
+It enables the selection of an algorithm’s implementation at runtime.
 
 This design pattern should be used to access the contents of a collection without exposing its internal representation, to support multiple traversals of a collection, and to provide a uniform interface for traversing different collections.  
 Template method
@@ -208,4 +208,5 @@ To provide an interface for creating families of related or dependent objects wi
 To convert the interface of a class into another interface clients expect.-answer
 To ensure a class has only one instance.
 To define a family of algorithms, encapsulate each one, and make them interchangeable.
+
 
